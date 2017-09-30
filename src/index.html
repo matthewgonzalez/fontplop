@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" href="styles/app.css" />
+</head>
+<body style="margin: 0px; padding: 0px;">
+  <div id="drag-bar" style="-webkit-app-region: drag; height: 40px; position: fixed; top: 0px; left: 0px; right: 0px;"></div>
+  <div id="App" style="margin-top: 40px;"></div>
+</body>
+
+<script>window.exports = module.exports</script>
+<script type="text/tsx">
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import {AppContainer} from 'react-hot-loader';
+
+let render = () => {
+  const { App } = require('./app');
+  ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('App'));
+}
+
+render();
+if (module.hot) { module.hot.accept(render); }
+</script>
+</html>

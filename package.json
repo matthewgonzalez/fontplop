@@ -1,0 +1,68 @@
+{
+  "name": "fontplop",
+  "productName": "fontplop",
+  "version": "1.0.0",
+  "description": "Drag'n'drop font converter.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "tslint --project tsconfig.json --type-check --force"
+  },
+  "keywords": [],
+  "author": "matthewgonzalez",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "fontplop"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "fontplop"
+      }
+    }
+  },
+  "dependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/electron-devtools-installer": "^2.0.2",
+    "@types/react": "^0.14.57",
+    "@types/react-dom": "^0.14.23",
+    "electron-compile": "^6.4.2",
+    "electron-devtools-installer": "^2.2.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "tslib": "^1.7.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-prebuilt-compile": "1.7.8",
+    "tslint": "^5.7.0",
+    "typescript": "^2.2.2"
+  }
+}
