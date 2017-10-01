@@ -20,8 +20,11 @@ const createWindow = async () => {
     height: 300,
     resizable: false,
     show:false, 
-    backgroundColor: '#000'
-    titleBarStyle: 'hiddenInset'
+    backgroundColor: '#000',
+    titleBarStyle: 'hiddenInset',
+    fullscreen: false,
+    fullscreenable: false,
+    maximizable: false
   });
 
   // and load the index.html of the app.
