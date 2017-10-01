@@ -2,28 +2,62 @@ import * as React from 'react';
 import * as Dropzone from 'react-dropzone'
 
 export class App extends React.Component<undefined, undefined> {
+  constructor (props) {
+    super(props)
+    this.state = {
+      dragOver: false
+    }
+  }
+
   onDrop (accepted, rejected) {
     console.log('accepted: ', accepted)
     console.log('rejected: ', rejected)
   }
+  onDragOver () {
+    this.setState({ dragOver: true })
+  }
+  onDragLeave () {
+    this.setState({ dragOver: false })
+  }
   render() {
     const dzStyle = {
       position: 'fixed',
-      top: '40px',
-      left: '10px',
-      right: '10px',
-      bottom: '10px',
-      borderRadius: '5px',
-      borderWidth: '2px',
-      borderStyle: 'dashed',
-      borderColor: '#444',
+      top: '1px',
+      left: '1px',
+      right: '1px',
+      bottom: '1px',
+      borderRadius: '3px',
+      borderWidth: '1px',
+      borderStyle: 'solid',
+      borderColor: '#087D9B',
       justifyContent: 'center',
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      textAlign: 'center',
+      fontSize: '24px',
+      lineHeight: '1em'
     }
     const dzActiveStyle = {
       backgroundColor: 'green',
-      borderColor: 'white'
+      borderColor: 'green'
+    }
+
+    const titleStyle = {
+      fontSize: 20,
+      marginBottom: 10
+    }
+
+    const subtitleStyle = {
+      fontSize: 10,
+      clear: 'both',
+      color: 'rgba(255,255,255,0.5)',
+      padding: '0px 20px'
+    }
+
+    const snippetStyle = {
+      backgroundColor: this.state.dragOver ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
+      borderRadius: 2,
+      padding: '2px 5px'
     }
 
     return (
@@ -32,9 +66,14 @@ export class App extends React.Component<undefined, undefined> {
         style={dzStyle}
         activeStyle={dzActiveStyle}
         onDrop={this.onDrop.bind(this)} 
+        onDragOver={this.onDragOver.bind(this)} 
+        onDragLeave={this.onDragLeave.bind(this)} 
         accept=".ttf, .woff, .eot"
       >
-        Drop some ish here
+        <div style={{padding: 30}}>
+          <div style={titleStyle}>Drop some <strong>ish</strong> here</div>
+          <div style={subtitleStyle}>ish must be of type <span style={snippetStyle}>ttf</span>, <span style={snippetStyle}>woff</span>, or <span style={snippetStyle}>eot</span></div>
+        </div>
       </Dropzone>
     );
   }

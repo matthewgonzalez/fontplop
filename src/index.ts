@@ -16,7 +16,7 @@ if (isDevMode) {
 const createWindow = async () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 450,
+    width: 250,
     height: 300,
     resizable: false,
     show:false, 
