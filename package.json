@@ -28,7 +28,8 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "extendInfo": "Info.plist"
       },
       "electronWinstallerConfig": {
         "name": "fontplop"
