@@ -12,6 +12,8 @@ export class App extends React.Component<undefined, undefined> {
   onDrop (accepted, rejected) {
     console.log('accepted: ', accepted)
     console.log('rejected: ', rejected)
+    this.setState({ dragOver: false })
+    
   }
   onDragOver () {
     this.setState({ dragOver: true })
@@ -51,7 +53,8 @@ export class App extends React.Component<undefined, undefined> {
       fontSize: 10,
       clear: 'both',
       color: 'rgba(255,255,255,0.5)',
-      padding: '0px 20px'
+      padding: '0px 20px',
+      lineHeight: '1.75em'
     }
 
     const snippetStyle = {
@@ -71,7 +74,7 @@ export class App extends React.Component<undefined, undefined> {
         accept=".ttf, .woff, .eot"
       >
         <div style={{padding: 30}}>
-          <div style={titleStyle}>Drop some <strong>ish</strong> here</div>
+          <div style={titleStyle}>Plop some ish here</div>
           <div style={subtitleStyle}>ish must be of type <span style={snippetStyle}>ttf</span>, <span style={snippetStyle}>woff</span>, or <span style={snippetStyle}>eot</span></div>
         </div>
       </Dropzone>
