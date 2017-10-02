@@ -53,6 +53,7 @@
     "@types/react-dom": "^0.14.23",
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.2.0",
+    "electron-forge": "^4.1.2",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-dropzone": "^4.1.3",
