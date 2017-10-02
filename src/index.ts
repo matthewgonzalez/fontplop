@@ -85,7 +85,12 @@ ipcMain.on('process-fonts', (e, filePath) => {
 
 app.on('open-file', function(event, filePath) {
   event.preventDefault()
-  app.on('ready', ()=> {
-    processFonts('file path here')
-  });
+
+  if (app.isReady()) {
+    processFonts('file path here')      
+  } else {
+    app.once('ready', ()=> {
+      processFonts('file path here')
+    });
+  }
 })
