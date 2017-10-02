@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { ipcRenderer } from 'electron'
+import * as React from 'react'
 import * as Dropzone from 'react-dropzone'
 
 export class App extends React.Component<undefined, undefined> {
@@ -12,6 +13,7 @@ export class App extends React.Component<undefined, undefined> {
   onDrop (accepted, rejected) {
     console.log('accepted: ', accepted)
     console.log('rejected: ', rejected)
+    ipcRenderer.send('process-fonts', 'file/path')
     this.setState({ dragOver: false })
     
   }
@@ -37,7 +39,9 @@ export class App extends React.Component<undefined, undefined> {
       alignItems: 'center',
       textAlign: 'center',
       fontSize: '24px',
-      lineHeight: '1em'
+      lineHeight: '1em',
+      userSelect: 'none',
+      cursor: 'default'
     }
     const dzActiveStyle = {
       backgroundColor: 'green',
