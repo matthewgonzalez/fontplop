@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, Menu, shell, dialog } from 'electron'
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import { enableLiveReload } from 'electron-compile'
 import processFonts from './process-fonts'
@@ -46,7 +46,35 @@ const createWindow = async () => {
     mainWindow = null
   })
 
+  const showOpen = function () {
+    dialog.showOpenDialog({
+      properties: ['openFile', 'openDirectory', 'multiSelections'],
+      filters: [{ name: 'FontPlop', extensions: ['ttf', 'otf'] }],
+    }, (filePaths) => {
+      processFonts([filePaths])
+    });
+  };
 
+  const menu = Menu.buildFromTemplate([
+    {
+      submenu: [
+        {
+          label: 'About',
+          click: () => { shell.openExternal('https://fontplop.com') }
+        }
+      ]
+    },
+    {
+      label: 'File',
+      submenu: [
+        {
+          label: 'Open',
+          click: function () { showOpen() }
+        }
+      ]
+    }
+  ])
+  Menu.setApplicationMenu(menu)
 }
 
 // This method will be called when Electron has finished
@@ -81,10 +109,18 @@ ipcMain.on('process-fonts', (event: any, files: Array<string>) => {
   processFonts(files)
 })
 
-app.on('open-file', function (event, filePath) {
+app.on('open-file', function (event, filePaths) {
   event.preventDefault()
 
-  app.once('ready', () => {
-    processFonts([filePath])
-  });
+  console.log(filePaths);
+
+
+  if (app.isReady()) {
+    processFonts([filePaths])
+  } else {
+    app.once('ready', () => {
+      processFonts([filePaths])
+    });
+  }
+
 })
