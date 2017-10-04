@@ -2,6 +2,8 @@ import { ipcRenderer } from 'electron'
 import * as React from 'react'
 import * as Dropzone from 'react-dropzone';
 
+export const validExtensions = ['.otf', '.ttf']
+
 export class App extends React.Component<any, any> {
 
   validExtensions: Array<String>
@@ -9,7 +11,7 @@ export class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props)
 
-    this.validExtensions = ['.otf', '.ttf']
+    this.validExtensions = validExtensions
     this.state = {
       dragOver: false
     }

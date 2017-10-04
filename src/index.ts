@@ -6,12 +6,10 @@ import processFonts from './process-fonts'
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow: Electron.BrowserWindow | null = null
-
 const isDevMode = process.execPath.match(/[\\/]electron/)
 
 if (isDevMode) {
   enableLiveReload({ strategy: 'react-hmr' })
-  // enableLiveReload();
 }
 
 const createWindow = async () => {
