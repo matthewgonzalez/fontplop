@@ -1,4 +1,4 @@
-import { app, BrowserWindow, dialog, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import { enableLiveReload } from 'electron-compile'
 import processFonts from './process-fonts'
@@ -10,17 +10,16 @@ let mainWindow: Electron.BrowserWindow | null = null
 const isDevMode = process.execPath.match(/[\\/]electron/)
 
 if (isDevMode) {
-  enableLiveReload({strategy: 'react-hmr'})
+  enableLiveReload({ strategy: 'react-hmr' })
   // enableLiveReload();
 }
 
 const createWindow = async () => {
-  // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 250,
-    height: 300,
-    resizable: false,
-    show:false, 
+    width: isDevMode ? 800 : 300,
+    height: isDevMode ? 800 : 300,
+    resizable: !!isDevMode,
+    show: false,
     backgroundColor: '#000',
     titleBarStyle: 'hiddenInset',
     fullscreen: false,
@@ -79,18 +78,15 @@ app.on('activate', () => {
   The following creates a listener to handle files dropped onto the window
   and files dropped onto app icon in dock or in Finder
 */
-ipcMain.on('process-fonts', (e, filePath) => {
-  processFonts('file path here')
+ipcMain.on('process-fonts', (event: any, files: Array<string>) => {
+  event.preventDefault();
+  processFonts(files)
 })
 
-app.on('open-file', function(event, filePath) {
+app.on('open-file', function (event, filePath) {
   event.preventDefault()
 
-  if (app.isReady()) {
-    processFonts('file path here')      
-  } else {
-    app.once('ready', ()=> {
-      processFonts('file path here')
-    });
-  }
+  app.once('ready', () => {
+    processFonts([filePath])
+  });
 })

@@ -1,29 +1,30 @@
 import { ipcRenderer } from 'electron'
 import * as React from 'react'
-import * as Dropzone from 'react-dropzone'
+import * as Dropzone from 'react-dropzone';
 
-export class App extends React.Component<undefined, undefined> {
-  constructor (props) {
+export class App extends React.Component<any, any> {
+  constructor(props: any) {
     super(props)
     this.state = {
       dragOver: false
     }
   }
 
-  onDrop (accepted, rejected) {
-    console.log('accepted: ', accepted)
-    console.log('rejected: ', rejected)
-    ipcRenderer.send('process-fonts', 'file/path')
+  onDrop(acceptedFiles: Array<any> /* rejected: any */) {
+    const acceptedFilePaths = acceptedFiles.map(f => f.path)
+    ipcRenderer.send('process-fonts', acceptedFilePaths)
     this.setState({ dragOver: false })
-    
   }
-  onDragOver () {
+
+  onDragOver() {
     this.setState({ dragOver: true })
   }
-  onDragLeave () {
+
+  onDragLeave() {
     this.setState({ dragOver: false })
   }
-  render() {
+
+  public render() {
     const dzStyle = {
       position: 'fixed',
       top: '1px',
@@ -62,22 +63,22 @@ export class App extends React.Component<undefined, undefined> {
     }
 
     const snippetStyle = {
-      backgroundColor: this.state.dragOver ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
+      backgroundColor: this.state.dragOver ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
       borderRadius: 2,
       padding: '2px 5px'
     }
 
     return (
-      <Dropzone 
+      <Dropzone
         disableClick
         style={dzStyle}
         activeStyle={dzActiveStyle}
-        onDrop={this.onDrop.bind(this)} 
-        onDragOver={this.onDragOver.bind(this)} 
-        onDragLeave={this.onDragLeave.bind(this)} 
-        accept=".ttf, .woff, .eot"
+        onDrop={this.onDrop.bind(this)}
+        onDragOver={this.onDragOver.bind(this)}
+        onDragLeave={this.onDragLeave.bind(this)}
+        accept=".ttf, .otf"
       >
-        <div style={{padding: 30}}>
+        <div style={{ padding: 30 }}>
           <div style={titleStyle}>Plop some ish here</div>
           <div style={subtitleStyle}>ish must be of type <span style={snippetStyle}>ttf</span>, <span style={snippetStyle}>woff</span>, or <span style={snippetStyle}>eot</span></div>
         </div>

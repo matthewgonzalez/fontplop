@@ -1,10 +1,9 @@
 import { dialog } from 'electron'
 
-function processFonts (filePath) {
-  console.log('processFonts function')
-  dialog.showMessageBox({ 
-    message: "You dragged a file over the icon! :-) \n" + filePath,
-    buttons: ["OK"] 
+function processFonts(files: Array<any>) {
+  dialog.showMessageBox({
+    message: "You dragged a file over the icon! :-) \n" + files.join("\n"),
+    buttons: ["OK"]
   })
 }
 
