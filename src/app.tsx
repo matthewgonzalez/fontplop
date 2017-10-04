@@ -3,8 +3,13 @@ import * as React from 'react'
 import * as Dropzone from 'react-dropzone';
 
 export class App extends React.Component<any, any> {
+
+  validExtensions: Array<String>
+
   constructor(props: any) {
     super(props)
+
+    this.validExtensions = ['.otf', '.ttf']
     this.state = {
       dragOver: false
     }
@@ -76,11 +81,19 @@ export class App extends React.Component<any, any> {
         onDrop={this.onDrop.bind(this)}
         onDragOver={this.onDragOver.bind(this)}
         onDragLeave={this.onDragLeave.bind(this)}
-        accept=".ttf, .otf"
+        accept={this.validExtensions.join(', ')}
       >
         <div style={{ padding: 30 }}>
-          <div style={titleStyle}>Plop some ish here</div>
-          <div style={subtitleStyle}>ish must be of type <span style={snippetStyle}>ttf</span>, <span style={snippetStyle}>woff</span>, or <span style={snippetStyle}>eot</span></div>
+          <div style={titleStyle}>Plop here</div>
+          <div style={subtitleStyle}>Must be of type
+            {(() => {
+
+              return this.validExtensions.map((ext, index) =>
+                <span key={index}><span style={snippetStyle}>{ext}</span>, </span>
+              )
+            })()
+            }
+          </div>
         </div>
       </Dropzone>
     );
