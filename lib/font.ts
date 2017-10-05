@@ -1,12 +1,15 @@
 import * as path from 'path'
 import * as childProcess from 'child_process'
 import * as replaceExt from 'replace-ext'
+
 import * as fs from 'fs'
+import * as rimraf from 'rimraf'
 
 export class Font {
 
   private pathToTTF: string
   filePath: string
+  ext: string
 
   constructor(filePath: string) {
     this.filePath = filePath
@@ -19,12 +22,25 @@ export class Font {
     }
   }
 
-  get outputPath() {
-    const dir = path.dirname(this.filePath)
-    const basename = path.basename(this.filePath)
-    const nameWithoutExt = path.parse(basename).name
+  get outFile() {
+    return `${this.outputPath}/${this.nameWithoutExt}${this.ext}`
+  }
 
-    return path.resolve(dir, `${nameWithoutExt}-export`)
+  get outputPath() {
+    const output = path.resolve(this.dir, `${this.nameWithoutExt}-export`)
+    return output
+  }
+
+  get dir() {
+    return path.dirname(this.filePath)
+  }
+
+  get basename() {
+    return path.basename(this.filePath)
+  }
+
+  get nameWithoutExt() {
+    return path.parse(this.basename).name
   }
 
   get isTTF() {
@@ -40,9 +56,13 @@ export class Font {
       return this.filePath
     }
 
-    childProcess.execSync(`./node_modules/.bin/otf2ttf ${this.filePath} ${this.outputPath}`)
+    // childProcess.execSync(`./node_modules/.bin/otf2ttf ${this.filePath} ${this.outputPath}/${this.nameWithoutExt}.ttf`)
     this.pathToTTF = replaceExt(this.filePath, '.ttf')
     return this.pathToTTF
+  }
+
+  delete() {
+    rimraf.sync(this.outputPath)
   }
 
 }

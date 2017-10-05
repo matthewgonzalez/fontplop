@@ -1,12 +1,17 @@
-import Font from './font'
-import ttf2svg from 'ttf2svg'
+import { Font } from './font'
+import * as ttf2svg from 'ttf2svg'
+import * as fs from 'fs'
 
-export default class SVG extends Font {
+export class SVG extends Font {
 
-  delete() {
+  get ext() {
+    return '.svg'
   }
 
   export() {
+    const input = fs.readFileSync(this.ttfPath)
+    fs.writeFileSync(this.outFile, ttf2svg(input))
+    return this.outFile
   }
 
 }

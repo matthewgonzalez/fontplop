@@ -1,12 +1,15 @@
-import Font from './font'
-import ttf2eot from 'ttf2eot'
+import { Font } from './font'
+import * as childProcess from 'child_process'
 
-export default class TTF extends Font {
+export class EOT extends Font {
 
-  delete() {
+  get ext() {
+    return '.eot'
   }
 
   export() {
+    childProcess.execSync(`./node_modules/.bin/ttf2woff ${this.ttfPath} ${this.outFile}`)
+    return this.outFile
   }
 
 }
