@@ -51,7 +51,7 @@ const createWindow = async () => {
       properties: ['openFile', 'openDirectory', 'multiSelections'],
       filters: [{ name: 'FontPlop', extensions: ['ttf', 'otf'] }],
     }, (filePaths) => {
-      processFonts([filePaths])
+      processFonts(filePaths)
     })
   }
 
@@ -108,16 +108,14 @@ ipcMain.on('process-fonts', (event: any, files: Array<string>) => {
   processFonts(files)
 })
 
-app.on('open-file', function (event, filePaths) {
+app.on('open-file', function (event, filePaths: Array<string>) {
   event.preventDefault()
 
-  console.log(filePaths)
-
   if (app.isReady()) {
-    processFonts([filePaths])
+    processFonts(filePaths)
   } else {
     app.once('ready', () => {
-      processFonts([filePaths])
+      processFonts(filePaths)
     })
   }
 
