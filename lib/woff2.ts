@@ -5,7 +5,7 @@ import * as fs from 'fs'
 export class WOFF2 extends Font {
 
   get ext() {
-    return '.woff2'
+    return 'woff2'
   }
 
   export() {

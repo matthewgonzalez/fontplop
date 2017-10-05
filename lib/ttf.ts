@@ -1,9 +1,9 @@
 import { Font } from './font'
 
-export class EOT extends Font {
+export class TTF extends Font {
 
   get ext() {
-    return 'eot'
+    return 'ttf'
   }
 
 }
