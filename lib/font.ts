@@ -8,7 +8,7 @@ import * as rimraf from 'rimraf'
 
 export class Font {
 
-  private pathToTTF: string
+  private pathToTempTTF: string
   filePath: string
 
   constructor(filePath: string) {
@@ -84,13 +84,15 @@ export class Font {
       hinting: true
     })
 
-    this.pathToTTF = replaceExt(this.filePath, '.ttf')
-    fs.writeFileSync(this.pathToTTF, outBuffer)
-    return this.pathToTTF
+    this.pathToTempTTF = replaceExt(this.filePath, '.ttf')
+    fs.writeFileSync(this.pathToTempTTF, outBuffer)
+    return this.pathToTempTTF
   }
 
   cleanupOrphans() {
-    rimraf.sync(this.pathToTTF)
+    if (fs.existsSync(this.pathToTempTTF)) {
+      rimraf.sync(this.pathToTempTTF)
+    }
   }
 
 }
