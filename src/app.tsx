@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron'
 import * as React from 'react'
-import * as Dropzone from 'react-dropzone';
+import * as Dropzone from 'react-dropzone'
 
 export const validExtensions = ['.otf', '.ttf']
 
@@ -98,6 +98,6 @@ export class App extends React.Component<any, any> {
           </div>
         </div>
       </Dropzone>
-    );
+    )
   }
 }

@@ -23,7 +23,7 @@ const createWindow = async () => {
     fullscreen: false,
     fullscreenable: false,
     maximizable: false
-  });
+  })
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
@@ -52,8 +52,8 @@ const createWindow = async () => {
       filters: [{ name: 'FontPlop', extensions: ['ttf', 'otf'] }],
     }, (filePaths) => {
       processFonts([filePaths])
-    });
-  };
+    })
+  }
 
   const menu = Menu.buildFromTemplate([
     {
@@ -89,7 +89,7 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-});
+})
 
 app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
@@ -97,30 +97,28 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
-});
-
+})
 
 /*
   The following creates a listener to handle files dropped onto the window
   and files dropped onto app icon in dock or in Finder
 */
 ipcMain.on('process-fonts', (event: any, files: Array<string>) => {
-  event.preventDefault();
+  event.preventDefault()
   processFonts(files)
 })
 
 app.on('open-file', function (event, filePaths) {
   event.preventDefault()
 
-  console.log(filePaths);
-
+  console.log(filePaths)
 
   if (app.isReady()) {
     processFonts([filePaths])
   } else {
     app.once('ready', () => {
       processFonts([filePaths])
-    });
+    })
   }
 
 })
