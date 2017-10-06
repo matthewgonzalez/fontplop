@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "publish": "npm run build && gh-pages --dist ./build --dest ./",
+    "publish": "npm run build && NODE_DEBUG=gh-pages gh-pages -d build",
     "deploy": "npm run publish"
   },
   "devDependencies": {
