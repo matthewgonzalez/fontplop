@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "publish": "npm run build && NODE_DEBUG=gh-pages gh-pages -d build",
+    "publish": "npm run build && echo 'Creating CNAME for www.fontplop.com' && echo www.fontplop.com > build/CNAME && NODE_DEBUG=gh-pages gh-pages -d build",
     "deploy": "npm run publish"
   },
   "devDependencies": {
