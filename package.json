@@ -12,7 +12,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages ./build"
+    "publish": "npm run build && gh-pages --dist ./build --dest ./",
+    "deploy": "npm run publish"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0"
