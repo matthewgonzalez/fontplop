@@ -1,4 +1,39 @@
 body {
   background: black;
-  font-family: 'Istok Web', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  color: #ccc;
+  font-weight: 200;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 16px;
+}
+
+a, a:hover, a:active, a:visited {
+  color: #117d99;
+  font-size: 12px;
+  margin-right: 7px;
+  font-weight: 500;
+  transition: all 250ms ease;
+  transform: translateY(0px);
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  color: #278FA9;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.App img {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
