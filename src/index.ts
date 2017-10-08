@@ -2,6 +2,7 @@ import { app, BrowserWindow, ipcMain, Menu, shell, dialog } from 'electron'
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import { enableLiveReload } from 'electron-compile'
 import processFonts from './process-fonts'
+import * as path from 'path'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,7 +23,8 @@ const createWindow = async () => {
     titleBarStyle: 'hiddenInset',
     fullscreen: false,
     fullscreenable: false,
-    maximizable: false
+    maximizable: false,
+    icon: path.join(__dirname, 'src/fontplop-app-icon.png')
   })
 
   // and load the index.html of the app.
@@ -60,8 +62,9 @@ const createWindow = async () => {
       submenu: [
         {
           label: 'About',
-          click: () => { shell.openExternal('https://fontplop.com') }
-        }
+          click: () => { shell.openExternal('http://www.fontplop.com') }
+        },
+        { role: 'quit' }
       ]
     },
     {

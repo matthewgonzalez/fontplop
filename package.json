@@ -41,7 +41,9 @@
       },
       "electronPackagerConfig": {
         "packageManager": "npm",
-        "extendInfo": "Info.plist"
+        "extendInfo": "Info.plist",
+        "icon": "src/assets/system-icons/icon.icns",
+        "name": "FontPlop"
       },
       "electronWinstallerConfig": {
         "name": "fontplop"
