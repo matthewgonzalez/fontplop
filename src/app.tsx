@@ -72,7 +72,9 @@ export class App extends React.Component<any, any> {
     const snippetStyle = {
       backgroundColor: this.state.dragOver ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
       borderRadius: 2,
-      padding: '2px 5px'
+      padding: '2px 5px',
+      display: 'inline block',
+      marginRight: '2px'
     }
 
     return (
@@ -87,14 +89,8 @@ export class App extends React.Component<any, any> {
       >
         <div style={{ padding: 30 }}>
           <div style={titleStyle}>Plop here</div>
-          <div style={subtitleStyle}>Must be of type
-            {(() => {
-
-              return this.validExtensions.map((ext, index) =>
-                <span key={index}><span style={snippetStyle}>{ext}</span>, </span>
-              )
-            })()
-            }
+          <div style={subtitleStyle}>
+            Must be of type {(() => this.validExtensions.map((ext, index) => <span key={index} style={snippetStyle}>{ext}</span>))()}
           </div>
         </div>
       </Dropzone>
