@@ -26,9 +26,11 @@ Via Bitcoin: `182JQcPACPh3bf6iQE73KB4Dvv5na6zep4`
 
 ### Building fontplop.com
 
-1. Checkout `site` branch
+fontplop.com is hosted on Github pages. Publish changes like so:
+
+1. Checkout `site` branch, which is a simple `create-react-app` app
 2. Make changes
-3. `npm run deploy`
+3. `npm run deploy` to publish to github
 
 ### License
 
