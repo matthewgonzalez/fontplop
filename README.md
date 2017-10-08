@@ -1,4 +1,4 @@
-# <a href='http://www.fontplop.com'><img src='https://user-images.githubusercontent.com/659829/31313351-ab630a58-ab95-11e7-94d7-87347ee3bdb1.jpg' height='60'></a>
+# <a href='http://www.fontplop.com'><img src='https://user-images.githubusercontent.com/659829/31313351-ab630a58-ab95-11e7-94d7-87347ee3bdb1.jpg' height='100'></a>
 
 FontPlop is an OSX/macOS application which takes `ttf` and `otf` files and outputs a webfont bundle: `woff2`, `woff`, `tff`, `svg`, and `eot`. It is the simpler, faster, free successor to [FontPrep](http://www.fontprep.com), which is no longer maintained.
 
