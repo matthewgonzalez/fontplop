@@ -35,7 +35,7 @@ const createWindow = async () => {
   }
 
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
+    if (mainWindow) { mainWindow.show() }
   })
 
   // Emitted when the window is closed.
