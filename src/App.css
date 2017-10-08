@@ -32,7 +32,6 @@ svg {
   position: absolute;
   margin-top: -5px;
   margin-left: 0px;
-  z-index:-1;
   font-size: 10px;
 }
 
@@ -126,21 +125,25 @@ a:hover {
 
 .run-animation #circle {
   stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
+  stroke-dashoffset: 1401;
+  /* -webkit-transform-origin: center;
   transform-origin: center;
   -moz-transform: scaleY(-1) rotate(120deg);
   -o-transform: scaleY(-1) rotate(120deg);
   -webkit-transform: scaleY(-1) rotate(120deg);
-  transform: scaleY(-1) rotate(120deg);
+  transform: scaleY(-1) rotate(120deg); */
   stroke-width: 7;
+  visibility: hidden;
   animation: circle .5s ease-in-out forwards .5s;
 }
 
 @keyframes circle {
   0% {
     stroke-dashoffset: 1400;
+    visibility: visible;
   }
   100% {
+    visibility: visible;
     stroke-dashoffset: 0;
   }
 }
@@ -150,6 +153,7 @@ a:hover {
   stroke-width: 5;
   animation: f1 .25s ease-in-out forwards 1.25s;
 }
+
 
 @keyframes f1 {
   0% {
@@ -225,7 +229,7 @@ a:hover {
   margin: auto;
   text-align: center;
   overflow: hidden;
-  z-index:-99;
+  z-index:-999;
   height: 100%;
   width: 100%;
   top: 0%;

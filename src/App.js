@@ -16,11 +16,11 @@ class App extends Component {
           </div>
           <div id="links">
             <a>Download</a>
-            <a class="donate">Donate</a>
+            <a className="donate">Donate</a>
             <a>Contribute</a>
           </div>
           <div id="what-is">
-            <p>FontPlop is an OSX/macOS application which takes <span class="filetype">ttf</span> and <span class="filetype">otf</span> files and outputs a webfont bundle: <span class="filetype">woff2</span>, <span class="filetype">woff</span>, <span class="filetype">tff</span>, <span class="filetype">svg</span>, and <span class="filetype">eot</span>.</p>
+            <p>FontPlop is an OSX/macOS application which takes <span className="filetype">ttf</span> and <span className="filetype">otf</span> files and outputs a webfont bundle: <span className="filetype">woff2</span>, <span className="filetype">woff</span>, <span className="filetype">tff</span>, <span className="filetype">svg</span>, and <span className="filetype">eot</span>.</p>
             <p>It is the simpler, faster, free successor to <a href="#">FontPrep</a>, which is no longer maintained.</p>
           </div>
           <div id="crafted-by">
