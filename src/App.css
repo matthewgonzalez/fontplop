@@ -24,6 +24,7 @@ svg {
 }
 #links a {
   margin: 5px 15px;  
+  position: relative;
 }
 
 #links .donate::after {
@@ -104,6 +105,8 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
+  -webkit-overflow-scrolling: touch;
 }
 
 .content {

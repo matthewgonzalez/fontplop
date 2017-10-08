@@ -28,8 +28,8 @@ class App extends Component {
           </div>
         </div>
         <div className="video-wrapper">
-          <video loop autoPlay>
-            <source src={ScreencastMp4} type="video/mp4" />
+          <video loop muted autoPlay playsInline>
+            <source src={ScreencastMp4} mutedtype="video/mp4" />
             <source src={ScreencastWebm} type="video/webm" />
           </video>
         </div>
