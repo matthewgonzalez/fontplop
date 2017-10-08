@@ -14,8 +14,8 @@ if (isDevMode) {
 
 const createWindow = async () => {
   mainWindow = new BrowserWindow({
-    width: isDevMode ? 800 : 300,
-    height: isDevMode ? 800 : 300,
+    width: isDevMode ? 800 : 200,
+    height: isDevMode ? 800 : 200,
     resizable: !!isDevMode,
     show: false,
     backgroundColor: '#000',
