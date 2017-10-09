@@ -4,7 +4,7 @@ body {
   padding: 0px;
   color: #fff;
   font-size: 11px;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;;
   -webkit-text-size-adjust: none;
   letter-spacing: .05em;
 }
@@ -23,7 +23,7 @@ svg {
   font-weight: 400;
 }
 #links a {
-  margin: 5px 15px;  
+  margin: 5px 15px;
   position: relative;
 }
 
@@ -39,9 +39,13 @@ svg {
 a {
   color: #158FC9;
   cursor: pointer;
+  text-decoration: none;
+  border-bottom: 3px solid #1c1c1c;
+  transition: border 100ms ease;
 }
+
 a:hover {
-  border-bottom: 3px solid #fff;
+  border-bottom-color: white;
 }
 
 #what-is {
@@ -114,9 +118,9 @@ a:hover {
 }
 
 #svgWrapper {
-  text-align: center; 
-  width: 150px; 
-  margin-left: auto; 
+  text-align: center;
+  width: 150px;
+  margin-left: auto;
   margin-right: auto;
   border-radius: 3px;
   padding: 15px;
