@@ -5,6 +5,9 @@ import FontplopLogoText from './components/FontplopLogoText'
 import ScreencastMp4 from './assets/fontplop-screencap.mp4'
 import ScreencastWebm from './assets/fontplop-screencap.webm'
 
+const github = 'https://www.github.com/matthewgonzalez/fontplop'
+const tweet = 'https://twitter.com/intent/tweet?text=I%20just%20downloaded%20FontPlop%20%E2%80%93%20the%20simple%2C%20fast%2C%20and%20free%20open%20source%20webfont%20converter%20for%20OSX%2FmacOS.%0A%0Ahttp%3A%2F%2Fwww.fontplop.com'
+
 class App extends Component {
   render() {
     return (
@@ -15,16 +18,16 @@ class App extends Component {
             <FontplopLogoText style={{marginTop: 25}} />
           </div>
           <div id="links">
-            <a>Download</a>
-            <a className="donate">Donate</a>
-            <a>Contribute</a>
+            <a href={`${github}/releases`}>Download</a>
+            <a className="donate" href={`${github}#donations`}>Donate</a>
+            <a href={github}>Contribute</a>
           </div>
           <div id="what-is">
             <p>FontPlop is an OSX/macOS application which takes <span className="filetype">ttf</span> and <span className="filetype">otf</span> files and outputs a webfont bundle: <span className="filetype">woff2</span>, <span className="filetype">woff</span>, <span className="filetype">tff</span>, <span className="filetype">svg</span>, and <span className="filetype">eot</span>.</p>
             <p>It is the simpler, faster, free successor to <a href="#">FontPrep</a>, which is no longer maintained.</p>
           </div>
           <div id="crafted-by">
-            Crafted with love by brothers <a href="http://briangonzalez.org">Brian</a> and <a href="http://matthewgonzalez.me">Matthew</a> Gonzalez
+            Crafted by the Gonzalez Bro's (<a href="http://briangonzalez.org">Brian</a> and <a href="http://matthewgonzalez.me">Matthew</a>)
           </div>
         </div>
         <div className="video-wrapper">
@@ -34,7 +37,7 @@ class App extends Component {
           </video>
         </div>
 
-        <a id="tweet-me">Tweet</a>
+        <a id="tweet-me" href={tweet} target="_blank">Tweet</a>
       </div>
     );
   }
