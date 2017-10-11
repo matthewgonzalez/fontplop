@@ -4,7 +4,7 @@ body {
   padding: 0px;
   color: #fff;
   font-size: 11px;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   -webkit-text-size-adjust: none;
   letter-spacing: .05em;
 }
@@ -244,9 +244,9 @@ a:hover {
 video {
   border-radius: 5px;
   /*width: 500px;*/
-  width: 110%;
+  width: 106%;
   position: absolute;
-  left: -6.5%;
+  left: -4%;
   bottom: 0;
   margin-bottom:-5%;
 }
