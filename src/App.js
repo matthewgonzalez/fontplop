@@ -20,7 +20,7 @@ class App extends Component {
           <div id="links">
             <a href={`${github}/releases`}>Download</a>
             <a className="donate" href={`${github}#donations`}>Donate</a>
-            <a href={github}>Contribute</a>
+            <a href={github}>Github</a>
           </div>
           <div id="what-is">
             <p>FontPlop is an OSX/macOS application which takes <span className="filetype">ttf</span> and <span className="filetype">otf</span> files and outputs a webfont bundle: <span className="filetype">woff2</span>, <span className="filetype">woff</span>, <span className="filetype">tff</span>, <span className="filetype">svg</span>, and <span className="filetype">eot</span>.</p>
