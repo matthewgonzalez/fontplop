@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MediaQuery from 'react-responsive';
+
 import './App.css'
 import Logo from './components/Logo'
 import FontplopLogoText from './components/FontplopLogoText'
@@ -30,12 +32,15 @@ class App extends Component {
             Crafted by the Gonzalez Bro's (<a href="http://briangonzalez.org">Brian</a> and <a href="http://matthewgonzalez.me">Matthew</a>)
           </div>
         </div>
-        <div className="video-wrapper">
-          <video loop muted autoPlay playsInline>
-            <source src={ScreencastMp4} mutedtype="video/mp4" />
-            <source src={ScreencastWebm} type="video/webm" />
-          </video>
-        </div>
+
+        <MediaQuery minWidth={1224}>
+          <div className="video-wrapper">
+            <video loop muted autoPlay playsInline>
+              <source src={ScreencastMp4} mutedtype="video/mp4" />
+              <source src={ScreencastWebm} type="video/webm" />
+            </video>
+          </div>
+        </MediaQuery>
 
         <a id="tweet-me" href={tweet} target="_blank">Tweet</a>
       </div>

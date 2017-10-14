@@ -115,6 +115,9 @@ a:hover {
 
 .content {
   margin: auto;
+  background: rgba(0,0,0,0.8);
+  box-shadow: 0 10px 100px black;
+  z-index: 10;
 }
 
 #svgWrapper {
@@ -133,12 +136,6 @@ a:hover {
 .run-animation #circle {
   stroke-dasharray: 1400;
   stroke-dashoffset: 1401;
-  /* -webkit-transform-origin: center;
-  transform-origin: center;
-  -moz-transform: scaleY(-1) rotate(120deg);
-  -o-transform: scaleY(-1) rotate(120deg);
-  -webkit-transform: scaleY(-1) rotate(120deg);
-  transform: scaleY(-1) rotate(120deg); */
   stroke-width: 7;
   visibility: hidden;
   animation: circle .5s ease-in-out forwards .5s;
@@ -232,27 +229,21 @@ a:hover {
 }
 
 .video-wrapper {
-  position: absolute;
-  margin: auto;
-  text-align: center;
-  overflow: hidden;
-  z-index:-999;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  left: 0%;
-  opacity: 0;
   animation: video-wrapper 2s ease-in-out forwards 2.5s;
+  position: absolute;
+  overflow: visible;
+  z-index: -999;
+  height: 50vh;
+  width: 100%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  opacity: 0;
 }
 
 video {
-  border-radius: 5px;
-  /*width: 500px;*/
-  width: 106%;
-  position: absolute;
-  left: -4%;
-  bottom: 0;
-  margin-bottom:-5%;
+  width: 100%;
 }
 
 @keyframes video-wrapper {
@@ -260,6 +251,6 @@ video {
     opacity: 0;
 	}
 	100% {
-    opacity: 1;
+    opacity: 0.4;
 	}
 }
