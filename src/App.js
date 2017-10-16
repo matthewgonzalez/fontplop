@@ -9,6 +9,7 @@ import ScreencastWebm from './assets/fontplop-screencap.webm'
 
 const github = 'https://www.github.com/matthewgonzalez/fontplop'
 const tweet = 'https://twitter.com/intent/tweet?text=I%20just%20downloaded%20FontPlop%20%E2%80%93%20the%20simple%2C%20fast%2C%20and%20free%20open%20source%20webfont%20converter%20for%20OSX%2FmacOS.%0A%0Ahttp%3A%2F%2Fwww.fontplop.com'
+const donate = 'https://flattr.com/submit/auto?user_id=matthewgonzalez&url=https://github.com/matthewgonzalez/fontplop&title=fontplop&language=javascript&tags=github&category=software'
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
           </div>
           <div id="links">
             <a href={`${github}/releases`}>Download</a>
-            <a className="donate" href={`${github}#donations`}>Donate</a>
+            <a className="donate" href={donate}>Donate</a>
             <a href={github}>Github</a>
           </div>
           <div id="what-is">
