@@ -21,8 +21,6 @@ npm run test
 
 Via Bitcoin: `182JQcPACPh3bf6iQE73KB4Dvv5na6zep4`
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=YOUR_FLATTR_USERNAME&url=YOUR_HTTP_GITHUB_REPO_URL&title=YOUR_GH_PROJECT_TITLE&language=GH_PROJECT_PROG_LANGUAGE&tags=github&category=software)
-
 
 ### Building fontplop.com
 
