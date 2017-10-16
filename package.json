@@ -9,6 +9,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "lint": "tslint --project tsconfig.json --type-check --force --fix",
+    "publish": "electron-forge publish",
     "test": "jest"
   },
   "keywords": [],
