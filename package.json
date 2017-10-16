@@ -32,7 +32,7 @@
           "squirrel"
         ],
         "darwin": [
-          "zip"
+          "dmg"
         ],
         "linux": [
           "deb",
@@ -48,11 +48,15 @@
       "electronWinstallerConfig": {
         "name": "fontplop"
       },
+      "electronInstallerDMG": {
+        "background": "src/assets/build/dmg-background-combined.tiff",
+        "icon": "src/assets/system-icons/icon.icns"
+      },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "matthewgonzalez",
+        "name": "fontplop"
       },
       "windowsStoreConfig": {
         "packageName": "",
@@ -65,7 +69,9 @@
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.2.0",
     "electron-forge": "^4.1.2",
+    "electron-json-storage": "^3.2.0",
     "fonteditor-core": "0.0.37",
+    "github-version-checker": "github:matthewgonzalez/github-version-checker",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-dropzone": "^4.1.3",

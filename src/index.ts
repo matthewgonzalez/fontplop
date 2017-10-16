@@ -4,6 +4,8 @@ import { enableLiveReload } from 'electron-compile'
 import processFonts from './process-fonts'
 import * as path from 'path'
 
+const checkUpdates = require('./checkupdates')
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow: Electron.BrowserWindow | null = null
@@ -48,6 +50,14 @@ const createWindow = async () => {
     mainWindow = null
   })
 
+  // Call auto-updater
+  mainWindow.webContents.on('did-frame-finish-load', () => {
+    // checkUpdates()
+    if (!isDevMode) {
+      checkUpdates()
+    }
+  })
+
   const showOpen = function () {
     dialog.showOpenDialog({
       properties: ['openFile', 'openDirectory', 'multiSelections'],
@@ -64,6 +74,10 @@ const createWindow = async () => {
           label: 'About',
           click: () => { shell.openExternal('http://www.fontplop.com') }
         },
+        { 
+          label: 'Check for update',
+          click: () => checkUpdates({forceCheck: true})
+        },
         { role: 'quit' }
       ]
     },
@@ -78,6 +92,7 @@ const createWindow = async () => {
     }
   ])
   Menu.setApplicationMenu(menu)
+
 }
 
 // This method will be called when Electron has finished
