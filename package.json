@@ -43,7 +43,7 @@
         "packageManager": "npm",
         "extendInfo": "Info.plist",
         "icon": "src/assets/system-icons/icon.icns",
-        "name": "FontPlop"
+        "name": "fontplop"
       },
       "electronWinstallerConfig": {
         "name": "fontplop"

@@ -61,7 +61,7 @@ const createWindow = async () => {
   const showOpen = function () {
     dialog.showOpenDialog({
       properties: ['openFile', 'openDirectory', 'multiSelections'],
-      filters: [{ name: 'FontPlop', extensions: ['ttf', 'otf'] }],
+      filters: [{ name: 'fontplop', extensions: ['ttf', 'otf'] }],
     }, (filePaths) => {
       processFonts(filePaths)
     })
@@ -71,13 +71,14 @@ const createWindow = async () => {
     {
       submenu: [
         {
-          label: 'About',
+          label: 'About fontplop',
           click: () => { shell.openExternal('http://www.fontplop.com') }
         },
-        { 
-          label: 'Check for update',
-          click: () => checkUpdates({forceCheck: true})
+        {
+          label: 'Check for Updates...',
+          click: () => checkUpdates({ forceCheck: true })
         },
+        { type: 'separator' },
         { role: 'quit' }
       ]
     },
