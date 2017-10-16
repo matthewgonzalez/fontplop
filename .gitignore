@@ -1,3 +1,5 @@
 node_modules
 out
 build
+*.log
+.DS_Store
