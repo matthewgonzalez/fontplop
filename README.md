@@ -36,6 +36,7 @@ fontplop.com is hosted on Github pages. Publish changes like so:
 To accomodate for retina/non-retina screens, a multipage `TIFF` should be generated from two files.
 
 ```$ cd src/assets/build```
+
 ```$ tiffutil -catnosizecheck dmg-background.tiff dmg-background@2x.tiff -out dmg-background-combined.tiff```
 
 ### License

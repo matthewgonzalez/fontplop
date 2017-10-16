@@ -1,5 +1,5 @@
-node_modules
-out
-build
+/node_modules
+/out
+/build
 *.log
 .DS_Store
