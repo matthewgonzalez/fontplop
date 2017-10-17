@@ -1,9 +1,9 @@
 body {
-  background-color: #000;
+  background-color: #010101;
   font-family: 'Montserrat', sans-serif;  margin: 0px;
   padding: 0px;
-  color: #fff;
-  font-size: 11px;
+  color: #ccc;
+  font-size: 12px;
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-text-size-adjust: none;
   letter-spacing: .05em;
@@ -53,7 +53,7 @@ a:hover {
   width: 250px;
   text-align: justify;
   margin: 40px auto 0px;
-  line-height: 1.5em;
+  line-height: 1.9;
 }
 
 #what-is .filetype {
@@ -66,9 +66,11 @@ a:hover {
 #crafted-by {
   text-align: center;
   font-size: 11px;
-  color: #414141;
+  color: #736c6c;
   width: 200px;
-  margin: 50px auto;
+  margin: 40px auto;
+  line-height: 1.7;
+  font-weight: 200;
 }
 #crafted-by a {
   text-decoration: none;
@@ -76,10 +78,11 @@ a:hover {
   border-style: solid;
   cursor: pointer;
   color: inherit;
+  transition: all 100ms ease;
 }
 #crafted-by a:hover {
-  color: #555;
-  border-bottom: 3px solid #fff;
+  color: white;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.25);
 }
 
 
