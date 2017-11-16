@@ -7,21 +7,21 @@ import * as rimraf from 'rimraf'
 
 export class Font {
 
-  private pathToTempTTF: string
   filePath: string
+  hasOrphanTTF: boolean
 
-  constructor(filePath: string) {
+  constructor (filePath: string) {
     this.filePath = filePath
     this.createOutputPath()
   }
 
-  createOutputPath() {
+  createOutputPath () {
     if (!fs.existsSync(this.outputPath)) {
       fs.mkdirSync(this.outputPath)
     }
   }
 
-  export() {
+  export () {
     const inBuffer = fs.readFileSync(this.ttfPath)
     const font = FontEditorCore.Font.create(inBuffer, {
       type: 'ttf'
@@ -35,44 +35,48 @@ export class Font {
     fs.writeFileSync(this.outFile, outBuffer)
   }
 
-  get ext() {
+  get ext () {
     return 'ttf'
   }
 
-  get outFile() {
+  get outFile () {
     return `${this.outputPath}/${this.nameWithoutExt}.${this.ext}`
   }
 
-  get outputPath() {
+  get outputPath () {
     const output = path.resolve(this.dir, `${this.nameWithoutExt}-export`)
     return output
   }
 
-  get dir() {
+  get dir () {
     return path.dirname(this.filePath)
   }
 
-  get basename() {
+  get basename () {
     return path.basename(this.filePath)
   }
 
-  get nameWithoutExt() {
+  get nameWithoutExt () {
     return path.parse(this.basename).name
   }
 
-  get isTTF() {
+  get isTTF () {
     return path.parse(this.filePath).ext === '.ttf'
   }
 
-  get isOTF() {
+  get isOTF () {
     return path.parse(this.filePath).ext === '.otf'
   }
 
-  get ttfPath() {
-    if (this.isTTF) {
-      return this.filePath
-    }
+  hasTTF (): boolean {
+    return fs.existsSync(this.ttfPath)
+  }
 
+  get ttfPath () {
+    return replaceExt(this.filePath, '.ttf')
+  }
+
+  createOrphanTTF () {
     const inBuffer = fs.readFileSync(this.filePath)
     const font = FontEditorCore.Font.create(inBuffer, {
       type: 'otf'
@@ -83,15 +87,12 @@ export class Font {
       hinting: true
     })
 
-    this.pathToTempTTF = replaceExt(this.filePath, '.ttf')
-    fs.writeFileSync(this.pathToTempTTF, outBuffer)
-    return this.pathToTempTTF
+    this.hasOrphanTTF = true
+    fs.writeFileSync(this.ttfPath, outBuffer)
   }
 
-  cleanupOrphans() {
-    if (fs.existsSync(this.pathToTempTTF)) {
-      rimraf.sync(this.pathToTempTTF)
-    }
+  cleanupOrphansIfNecessary () {
+    if (this.hasOrphanTTF) rimraf.sync(this.ttfPath)
   }
 
 }

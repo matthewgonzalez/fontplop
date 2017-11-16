@@ -4,11 +4,11 @@ import * as fs from 'fs'
 
 export class WOFF2 extends Font {
 
-  get ext() {
+  get ext () {
     return 'woff2'
   }
 
-  export() {
+  export () {
     const input = fs.readFileSync(this.ttfPath)
     fs.writeFileSync(this.outFile, ttf2woff2(input))
     return this.outFile

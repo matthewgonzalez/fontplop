@@ -1,7 +1,7 @@
 {
   "name": "fontplop",
   "productName": "fontplop",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Drag'n'drop font converter.",
   "main": "src/index.ts",
   "scripts": {
@@ -81,14 +81,14 @@
     "ttf2woff2": "^2.0.3"
   },
   "devDependencies": {
-    "@types/electron-devtools-installer": "^2.0.2",
     "@types/electron": "^1.6.10",
+    "@types/electron-devtools-installer": "^2.0.2",
+    "@types/jest": "^21.1.2",
     "@types/react": "16.0.10",
     "@types/react-dom": "^16.0.1",
     "@types/react-dropzone": "^4.1.0",
-    "@types/rimraf": "^2.0.2",
     "@types/replace-ext": "0.0.27",
-    "@types/jest": "^21.1.2",
+    "@types/rimraf": "^2.0.2",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
@@ -97,6 +97,7 @@
     "jest": "^21.2.1",
     "ts-jest": "^21.1.0",
     "tslint": "^5.7.0",
+    "tslint-config-standard": "^7.0.0",
     "typescript": "^2.5.3"
   },
   "jest": {
