@@ -8,7 +8,7 @@ export class App extends React.Component<any, any> {
 
   validExtensions: Array<String>
 
-  constructor(props: any) {
+  constructor (props: any) {
     super(props)
 
     this.validExtensions = validExtensions
@@ -17,21 +17,21 @@ export class App extends React.Component<any, any> {
     }
   }
 
-  onDrop(acceptedFiles: Array<any> /* rejected: any */) {
+  onDrop (acceptedFiles: Array<any> /* rejected: any */) {
     const acceptedFilePaths = acceptedFiles.map(f => f.path)
     ipcRenderer.send('process-fonts', acceptedFilePaths)
     this.setState({ dragOver: false })
   }
 
-  onDragOver() {
+  onDragOver () {
     this.setState({ dragOver: true })
   }
 
-  onDragLeave() {
+  onDragLeave () {
     this.setState({ dragOver: false })
   }
 
-  public render() {
+  public render () {
     const dzStyle = {
       position: 'fixed',
       top: '1px',

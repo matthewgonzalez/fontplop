@@ -11,17 +11,21 @@ export class FontCollection extends Font {
 
   paths: Array<string>
 
-  export() {
+  export () {
     const path = this.ttfPath
+
+    if (!this.hasTTF()) this.createOrphanTTF()
+
     new TTF(path).export()
     new WOFF(path).export()
     new WOFF2(path).export()
     new SVG(path).export()
     new EOT(path).export()
-    this.cleanupOrphans()
+
+    this.cleanupOrphansIfNecessary()
   }
 
-  cleanup() {
+  cleanup () {
     rimraf.sync(this.outputPath)
   }
 
