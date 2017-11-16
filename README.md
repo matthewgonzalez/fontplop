@@ -13,6 +13,10 @@ FontPlop is an OSX/macOS application which takes `ttf` and `otf` files and outpu
 
 <img src="https://user-images.githubusercontent.com/659829/31313375-6a23f4f2-ab96-11e7-9dfb-3643df84e824.gif" alt="fontplop demo" height=300>
 
+### Installation
+
+`brew cask install fontplop`
+
 ## Testing
 
 Run lint (tslint) and tests (Jest) like so:
