@@ -35,6 +35,10 @@ export class Font {
     fs.writeFileSync(this.outFile, outBuffer)
   }
 
+  get inputExt (): string {
+    return path.extname(this.filePath)
+  }
+
   get ext () {
     return 'ttf'
   }
@@ -79,7 +83,7 @@ export class Font {
   createOrphanTTF () {
     const inBuffer = fs.readFileSync(this.filePath)
     const font = FontEditorCore.Font.create(inBuffer, {
-      type: 'otf'
+      type: this.inputExt
     })
 
     const outBuffer = font.write({

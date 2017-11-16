@@ -31,7 +31,7 @@ function showUpdateMessageBox (update) {
         if (error) throw error
         if (hasKey) storage.remove('ignoreVersion', (error) => {
           if (error) throw error
-        })        
+        })
       })
     } else if (response === 2) {
       storage.set('ignoreVersion', update.tag_name, (error) => {

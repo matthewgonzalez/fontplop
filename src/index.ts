@@ -61,7 +61,7 @@ const createWindow = async () => {
   const showOpen = function () {
     dialog.showOpenDialog({
       properties: ['openFile', 'openDirectory', 'multiSelections'],
-      filters: [{ name: 'fontplop', extensions: ['ttf', 'otf'] }],
+      filters: [{ name: 'fontplop', extensions: ['ttf', 'otf'] }]
     }, (filePaths) => {
       processFonts(filePaths)
     })
@@ -127,7 +127,7 @@ ipcMain.on('process-fonts', (event: any, files: Array<string>) => {
   processFonts(files)
 })
 
-app.on('open-file', function (event, filePaths: Array<string>) {
+app.on('open-file', function (event: any, filePaths: Array<string>) {
   event.preventDefault()
 
   if (app.isReady()) {
