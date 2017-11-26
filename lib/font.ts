@@ -36,7 +36,7 @@ export class Font {
   }
 
   get inputExt (): string {
-    return path.extname(this.filePath)
+    return path.extname(this.filePath).replace('.', '')
   }
 
   get ext () {
@@ -82,6 +82,7 @@ export class Font {
 
   createOrphanTTF () {
     const inBuffer = fs.readFileSync(this.filePath)
+
     const font = FontEditorCore.Font.create(inBuffer, {
       type: this.inputExt
     })
