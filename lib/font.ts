@@ -4,6 +4,7 @@ import * as FontEditorCore from 'fonteditor-core'
 
 import * as fs from 'fs'
 import * as rimraf from 'rimraf'
+import { execSync } from 'child_process'
 
 export class Font {
 
@@ -78,6 +79,13 @@ export class Font {
 
   get ttfPath () {
     return replaceExt(this.filePath, '.ttf')
+  }
+
+  copySelf () {
+    this.createOutputPath()
+    execSync(`
+      cp "${this.filePath}" "${this.outputPath}"
+    `)
   }
 
   createOrphanTTF () {
