@@ -1,5 +1,5 @@
 import { FontCollection } from '../font-collection'
-import { SVG } from '../svg'
+import { WOFF2 } from '../woff2'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -17,6 +17,6 @@ it('should create an output path', () => {
 })
 
 it('should have an extension', () => {
-  const svg = new SVG(fontPath)
-  expect(svg.ext).toBe('svg')
+  const svg = new WOFF2(fontPath)
+  expect(svg.ext).toBe('woff2')
 })
