@@ -22,11 +22,16 @@ export class Font {
     }
   }
 
-  export () {
+  readFont () {
     const inBuffer = fs.readFileSync(this.ttfPath)
-    const font = FontEditorCore.Font.create(inBuffer, {
+    return FontEditorCore.Font.create(inBuffer, {
       type: 'ttf'
     })
+  }
+
+  export () {
+    
+    const font = this.readFont()
 
     const outBuffer = font.write({
       type: this.ext,
@@ -63,6 +68,10 @@ export class Font {
 
   get nameWithoutExt () {
     return path.parse(this.basename).name
+  }
+
+  get fontNameHuman () {
+    return this.readFont().data.name.fullName || this.nameWithoutExt
   }
 
   get isTTF () {
