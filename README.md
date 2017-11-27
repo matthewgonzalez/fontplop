@@ -28,19 +28,16 @@ npm run lint
 npm run test
 ```
 
-### Recommended CSS
+### Generated CSS (recommended)
 
 _Stolen directly from the Typekit site 💂💰_
 
 ```css
+
 @font-face {
-  font-family:"my-font";
-  font-style: italic;
-  font-weight: 400;
-  src:  url("https://mysite.com/my-font-400.woff2") format("woff2),
-        url("https://mysite.com/my-font-400.woff") format("woff"),
-        url("https://mysite.com/my-font-400.ttf") format("truetype"), /* if TTF file available */
-        url("https://mysite.com/my-font-400.otf") format("opentype"); /* if OTF file available */
+    font-family:"My Font";
+    src:url("my-font.woff2") format("woff2"),url("my-font.woff") format("woff"),url("my-font.otf") format("opentype");
+    font-style:normal;font-weight:400;
 }
 ```
 

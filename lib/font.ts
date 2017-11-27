@@ -30,7 +30,7 @@ export class Font {
   }
 
   export () {
-    
+
     const font = this.readFont()
 
     const outBuffer = font.write({

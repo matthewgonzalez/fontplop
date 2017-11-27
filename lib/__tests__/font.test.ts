@@ -24,5 +24,5 @@ it('should have an extension', () => {
 it('should have a human font name', () => {
   expect(fc.fontNameHuman).not.toBeUndefined()
   expect(fc.fontNameHuman).not.toEqual(null)
-  fc.cleanup()  
+  fc.cleanup()
 })
