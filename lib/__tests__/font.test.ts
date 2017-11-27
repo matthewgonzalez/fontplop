@@ -20,3 +20,9 @@ it('should have an extension', () => {
   const svg = new WOFF2(fontPath)
   expect(svg.ext).toBe('woff2')
 })
+
+it('should have a human font name', () => {
+  expect(fc.fontNameHuman).not.toBeUndefined()
+  expect(fc.fontNameHuman).not.toEqual(null)
+  fc.cleanup()  
+})
