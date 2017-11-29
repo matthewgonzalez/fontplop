@@ -52,6 +52,7 @@ Help us keep FontPlop free and open source by making a donation. Thanks – it h
 to build awesome stuff.
 
 Via OpenCollective: https://opencollective.com/fontplop
+
 Via Bitcoin: `182JQcPACPh3bf6iQE73KB4Dvv5na6zep4`
 
 
