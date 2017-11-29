@@ -10,7 +10,7 @@ const iconPath = 'assets/system-icons/icon_64x64.png'
 const updateURL = 'http://fontplop.com/'
 
 function showUpdateMessageBox (update) {
-  let message = 'Check it. ' + update.tag_name + ' is hot off the press. You are currently rocking v' + version + '. You might want to go an grab it.'
+  let message = 'Check it. ' + update.tag_name + ' is hot off the press. You are currently rocking v' + version + '. You might want to go and grab it.'
 
   // Ask user to update the app
   dialog.showMessageBox({
