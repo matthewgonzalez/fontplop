@@ -7,7 +7,7 @@
 
 [![build status](https://img.shields.io/travis/reactjs/redux/master.svg?style=flat-square)](https://travis-ci.org/matthewgonzalez/fontplop)
 
-FontPlop is an OSX/macOS application which takes `ttf` and `otf` files and outputs a webfont bundle: `woff2`, `woff`, `tff`/`otf`. It is the simpler, faster, free successor to [FontPrep](http://www.fontprep.com), which is no longer maintained.
+FontPlop is an OSX/macOS application which takes `ttf` and `otf` files and outputs a webfont bundle: `woff2`, `woff`, `ttf`/`otf`. It is the simpler, faster, free successor to [FontPrep](http://www.fontprep.com), which is no longer maintained.
 
 ### Demo
 
