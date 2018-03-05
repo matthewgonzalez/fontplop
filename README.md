@@ -5,7 +5,7 @@
 
 ---
 
-[![build status](https://img.shields.io/travis/reactjs/redux/master.svg?style=flat-square)](https://travis-ci.org/matthewgonzalez/fontplop)
+[![Backers on Open Collective](https://opencollective.com/fontplop/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/fontplop/sponsors/badge.svg)](#sponsors) [![build status](https://img.shields.io/travis/reactjs/redux/master.svg?style=flat-square)](https://travis-ci.org/matthewgonzalez/fontplop)
 
 FontPlop is an OSX/macOS application which takes `ttf` and `otf` files and outputs a webfont bundle: `woff2`, `woff`, `ttf`/`otf`. It is the simpler, faster, free successor to [FontPrep](http://www.fontprep.com), which is no longer maintained.
 
@@ -72,6 +72,37 @@ To accomodate for retina/non-retina screens, a multipage `TIFF` should be genera
 ```$ cd src/assets/build```
 
 ```$ tiffutil -catnosizecheck dmg-background.tiff dmg-background@2x.tiff -out dmg-background-combined.tiff```
+
+### Credits
+
+#### Contributors
+
+This project exists thanks to all the people who contribute. 
+<a href="graphs/contributors"><img src="https://opencollective.com/fontplop/contributors.svg?width=890&button=false" /></a>
+
+
+#### Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/fontplop#backer)]
+
+<a href="https://opencollective.com/fontplop#backers" target="_blank"><img src="https://opencollective.com/fontplop/backers.svg?width=890"></a>
+
+
+#### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/fontplop#sponsor)]
+
+<a href="https://opencollective.com/fontplop/sponsor/0/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/1/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/2/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/3/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/4/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/5/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/6/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/7/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/8/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/fontplop/sponsor/9/website" target="_blank"><img src="https://opencollective.com/fontplop/sponsor/9/avatar.svg"></a>
+
 
 
 ### License
