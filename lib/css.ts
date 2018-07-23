@@ -11,9 +11,9 @@ export class CSS extends Font {
 
     const cssOutput = `
 @font-face {
-    font-family:"${fontNameHuman}";
-    src:url("${nameWithoutExt}.woff2") format("woff2"),url("${nameWithoutExt}.woff") format("woff"),url("${nameWithoutExt}.otf") format("opentype");
-    font-style:normal;font-weight:400;
+  font-family:"${fontNameHuman}";
+  src:url("${nameWithoutExt}.woff2") format("woff2"),url("${nameWithoutExt}.woff") format("woff"),url("${nameWithoutExt}.ttf") format("truetype");
+  font-style:normal;font-weight:400;
 }
         `
     fs.writeFileSync(this.outFile, cssOutput)
