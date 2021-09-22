@@ -16,7 +16,7 @@ FontPlop is an OSX/macOS application which takes `ttf` and `otf` files and outpu
 
 ### Installation
 
-`brew cask install fontplop`
+`brew install fontplop`
 
 
 ### Testing
